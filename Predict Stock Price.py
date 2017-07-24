@@ -88,7 +88,7 @@ accuracy = clf.score(X_test, y_test)
 # Predict data
 predictions = clf.predict(X_predict)
 
-print predictions
+print (predictions)
 
 data['Forecast'] = np.nan
 
@@ -104,8 +104,9 @@ for i in predictions:
     data.loc[next_date] = [np.nan for _ in range(len(data.columns)-1)] + [i]
 
 
-print accuracy
+print (accuracy)
 
+# Visualize the graph
 data['Adj. Close'].plot()
 data['Forecast'].plot()
 plt.legend(loc=4)
